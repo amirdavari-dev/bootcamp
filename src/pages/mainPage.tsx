@@ -15,6 +15,13 @@ import { Suspense } from "react";
 import Loading from "../components/loading";
 import CourseSortCard from "../components/courseSortCard";
 import { IoIosArrowBack } from "react-icons/io";
+import free from "@/assets/images/free.png";
+import js from "@/assets/images/js.webp";
+import nodereact from "@/assets/images/nodereact.webp";
+import next from "@/assets/images/next.jpg";
+import mysql from "@/assets/images/mysql.png";
+import express from "@/assets/images/express.jpg";
+
 const MainPage = () => {
   return (
     <Suspense fallback={<Loading />}>
@@ -42,9 +49,19 @@ const MainPage = () => {
             <p className="font-extralight text-center mt-1 p-1 lg:text-[20px]">
               برنامه نویسی شغل نیست! سبک زندگی ست
             </p>
+            <p className="text-center mt-1 p-1 lg:text-[20px] font-bold">
+              جلسه رایگان روز شنبه 1403/10/15 ساعت 17:00 رو از دست نده برای
+              تکمیل فرایند ثبت نام رو انجام بده
+            </p>
             <div className="flex-cen mt-1 gap-x-2">
+              <Link
+                to="/register"
+                className="bg-emerald-600 text-white rounded-2xl lg:text-[19px] p-2 hover:bg-blue-800 transition-all hover:scale-95"
+              >
+                ثبت نام
+              </Link>
               <a
-                href="#bootcamp"
+                href="#coursesId"
                 className="bg-blue-600 text-white rounded-2xl lg:text-[19px] p-2 hover:bg-blue-800 transition-all hover:scale-95"
               >
                 دوره ها
@@ -55,6 +72,56 @@ const MainPage = () => {
               >
                 درباره من
               </a>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center items-center mb-10">
+          <div className="group w-[350px] bg-white rounded-[20px] overflow-hidden">
+            <div>
+              <img
+                src={free}
+                className="w-full h-[200px] rounded-[20px]"
+                alt=""
+              />
+            </div>
+            <div className="my-5 px-4">
+              <h2 className="font-bold text-lg mb-2 text-blue-600">
+                جلسه رایگان توجیحی بووت کمپ
+              </h2>
+              <p className="line-clamp-3">
+                در این جلسه به نکات و اهداف دوره های بووتکمپ اشاره و شمارو با
+                برنامه نویسی اشنا میکنم
+              </p>
+              <div className="flex justify-between items-center mt-5 bg-blue-600 p-2 rounded-[20px] text-white font-bold">
+                <div>
+                  <p>
+                    <span>تاریخ شروع:</span>
+                    <span>1403/10/15 شنبه - 17:00</span>
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <div>
+                  <p className="font-bold p-1 rounded-[20px]">
+                    <span>قیمت: </span>
+                    <span className="text-blue-600">رایگان</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="font-bold p-1 rounded-[20px]">
+                    <span>ظرفیت باقی مانده: </span>
+                    <span className="text-blue-600">نامحدود</span>
+                  </p>
+                </div>
+              </div>
+              <div className="mt-2">
+                <Link
+                  className="w-full block text-center font-bold text-blue-600 border-[2px] border-blue-600 rounded-[20px] p-1 group-hover:bg-blue-600 group-hover:text-white transition-all"
+                  to="/"
+                >
+                  ثبت نام
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -240,13 +307,18 @@ const MainPage = () => {
             <div className="col-span-12">
               <div>
                 <p className="text-center font-bold text-lg text-blue-600">
-                  از هیچی نترس من در جلسه <strong className="bg-blue-600 text-white p-2 rounded-2xl">رایگان</strong> اولیه همه چیو
-                  و مسیرو بهت توضیح میدم
+                  از هیچی نترس من در جلسه{" "}
+                  <strong className="bg-blue-600 text-white p-2 rounded-2xl">
+                    رایگان
+                  </strong>{" "}
+                  اولیه همه چیو و مسیرو بهت توضیح میدم
                 </p>
-             
               </div>
               <div className="flex-cen mt-5">
-                <Link to="/" className="bg-blue-600 text-white p-2 rounded-2xl hover:bg-blue-700 transition-all">
+                <Link
+                  to="/"
+                  className="bg-blue-600 text-white p-2 rounded-2xl hover:bg-blue-700 transition-all"
+                >
                   ثبت نامتو انجام بده
                 </Link>
               </div>
@@ -254,7 +326,7 @@ const MainPage = () => {
           </div>
         </div>
         {/* courses */}
-        <div className="mt-10">
+        <div id="coursesId" className="mt-10">
           <div className="col-span-12 flex-cen mt-10 mb-5">
             <Header text="دوره های بووت کمپ !!!" />
           </div>
@@ -262,67 +334,52 @@ const MainPage = () => {
             <CourseCard
               classCount={6}
               price={400}
-              start="1403/10/20"
+              start="1403/10/23"
               title="آموزش Html css مقدماتی تا پیشرفته"
               images={html}
-              desc="در این دوره به شما آموخته میشود که سایت چیست؟وچگونه یک سایت زیبا را کدنویسی کرده و آن را به عنوان نمونه کار در نظر بگیرید"
+              desc="این دوره مناسب کسانی میباشد که میخواهند وارد محیط برنامه نویسی وبسایت و ساختار و بیس سایت شوند | مناسب شروع ورود به بازار" 
+            />
+            <CourseCard
+              classCount={15}
+              price={4200000}
+              start="1403/10/20"
+              title="آموزش مقدماتی تا پیشرفته زبان برنامه نویسی جاوااسکریپت"
+              images={js}
+              desc="در این دوره زبان برنامه نویسی جاوااسکریپت رو یادمیگرید با وبسایت ترکیب میشه و به مرور با مفاهیم و کاربرد های ها آشنا میشین"
+            />
+            <CourseCard
+              classCount={15}
+              price={5000000}
+              start="1403/10/20"
+              title="آموزش محیط نود جی اس و فریمورک ریاکت جی اس"
+              images={nodereact}
+              desc="نود جی اس محیط اجرای زبانی جاواسکریپت هست که در این دوره با این محیط و وارد فریورک جذاب ریاکت که بر پایه جاوااسکریپت هست میشیم"
+            />
+            <CourseCard
+              classCount={10}
+              price={2500000}
+              start="1403/10/20"
+              title="آموزش پیشرفته Next.js"
+              images={next}
+              desc="نکست جی اس فریمورک قدرتمند زبان جاوااسکریپت میباشد که قابلیت های خیلی خفن برای سایت داره"
             />
             <CourseCard
               classCount={6}
-              price={400}
+              price={1500000}
               start="1403/10/20"
-              title="آموزش Html css مقدماتی تا پیشرفته"
-              images={html}
-              desc="در این دوره به شما آموخته میشود که سایت چیست؟وچگونه یک سایت زیبا را کدنویسی کرده و آن را به عنوان نمونه کار در نظر بگیرید"
+              title="کار با پایگاه داده mySql"
+              images={mysql}
+              desc="این دوره مناسب کسایی هست که میخواهند فروشگاه خود را راه اندازی کنند و محصولاتشونو اونجا ذخیره کنن"
             />
             <CourseCard
-              classCount={6}
-              price={400}
+              classCount={10}
+              price={1000000}
               start="1403/10/20"
-              title="آموزش Html css مقدماتی تا پیشرفته"
-              images={html}
-              desc="در این دوره به شما آموخته میشود که سایت چیست؟وچگونه یک سایت زیبا را کدنویسی کرده و آن را به عنوان نمونه کار در نظر بگیرید"
+              title="آموزش مقدماتی تا پیشرفته Express.js"
+              images={express}
+              desc="این دوره تکمیلی محیط نود جی اس برای ارتباط سایت خود با پایگاه داده هست در واقع کتابخانه ای برای ارتباط با پایگاه داده..."
             />
-            <CourseCard
-              classCount={6}
-              price={400}
-              start="1403/10/20"
-              title="آموزش Html css مقدماتی تا پیشرفته"
-              images={html}
-              desc="در این دوره به شما آموخته میشود که سایت چیست؟وچگونه یک سایت زیبا را کدنویسی کرده و آن را به عنوان نمونه کار در نظر بگیرید"
-            />
-            <CourseCard
-              classCount={6}
-              price={400}
-              start="1403/10/20"
-              title="آموزش Html css مقدماتی تا پیشرفته"
-              images={html}
-              desc="در این دوره به شما آموخته میشود که سایت چیست؟وچگونه یک سایت زیبا را کدنویسی کرده و آن را به عنوان نمونه کار در نظر بگیرید"
-            />
-            <CourseCard
-              classCount={6}
-              price={400}
-              start="1403/10/20"
-              title="آموزش Html css مقدماتی تا پیشرفته"
-              images={html}
-              desc="در این دوره به شما آموخته میشود که سایت چیست؟وچگونه یک سایت زیبا را کدنویسی کرده و آن را به عنوان نمونه کار در نظر بگیرید"
-            />
-            <CourseCard
-              classCount={6}
-              price={400}
-              start="1403/10/20"
-              title="آموزش Html css مقدماتی تا پیشرفته"
-              images={html}
-              desc="در این دوره به شما آموخته میشود که سایت چیست؟وچگونه یک سایت زیبا را کدنویسی کرده و آن را به عنوان نمونه کار در نظر بگیرید"
-            />
-            <CourseCard
-              classCount={6}
-              price={400}
-              start="1403/10/20"
-              title="آموزش Html css مقدماتی تا پیشرفته"
-              images={html}
-              desc="در این دوره به شما آموخته میشود که سایت چیست؟وچگونه یک سایت زیبا را کدنویسی کرده و آن را به عنوان نمونه کار در نظر بگیرید"
-            />
+            
           </div>
         </div>
         <div>

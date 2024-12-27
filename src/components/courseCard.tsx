@@ -21,7 +21,7 @@ const CourseCard = ({
         <img src={images} className="w-full h-[200px] rounded-[20px]" alt="" />
       </div>
       <div className="my-5 px-4">
-        <h2 className="font-bold text-lg mb-2">{title}</h2>
+        <h2 className="font-bold text-lg mb-2 h-12">{title}</h2>
         <p className="line-clamp-3">{desc}</p>
         <div className="flex justify-between items-center mt-5 bg-blue-600 p-2 rounded-[20px] text-white font-bold">
           <div>
