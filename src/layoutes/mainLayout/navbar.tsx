@@ -24,7 +24,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/courses-reserve"
+                to="/register"
                 className={({ isActive }) => {
                   return `${
                     isActive ? "text-blue-600" : ""

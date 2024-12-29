@@ -18,7 +18,7 @@ const Footer = () => {
           </li>
           <li className="flex justify-between md:justify-start items-center gap-x-2 mt-5">
             
-            <Link className="font-bold text-blue-600 bg-white p-2 rounded-2xl text-[12px]" target="_blank" to="/reserve">ثبت نام در دوره ها</Link>
+            <Link className="font-bold text-blue-600 bg-white p-2 rounded-2xl text-[12px]" target="_blank" to="/register">ثبت نام در دوره ها</Link>
             <p className="text-[12px] text-end">امیر داوری | برنامه نویس جاوااسکریپت</p>
           </li>
         </ul>

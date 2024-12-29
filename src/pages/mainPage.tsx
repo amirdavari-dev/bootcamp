@@ -117,7 +117,7 @@ const MainPage = () => {
               <div className="mt-2">
                 <Link
                   className="w-full block text-center font-bold text-blue-600 border-[2px] border-blue-600 rounded-[20px] p-1 group-hover:bg-blue-600 group-hover:text-white transition-all"
-                  to="/"
+                  to="/register"
                 >
                   ثبت نام
                 </Link>
@@ -148,7 +148,7 @@ const MainPage = () => {
           </div>
           <div className="col-span-12 flex-cen mb-10">
             <Link
-              to="/"
+              to="/register"
               className="bg-blue-600 w-[200px] block p-2 rounded-2xl text-white text-center hover:bg-blue-700 transition-all"
             >
               ثبت نام
@@ -198,7 +198,7 @@ const MainPage = () => {
                   هستش. <br /> اگه علاقه به برنامه نویسی داری دوره ها و توضیحات
                   اون ها رو خوب بخون و{" "}
                   <Link
-                    to="/"
+                    to="/register"
                     className="bg-white px-1 rounded-2xl text-blue-600"
                   >
                     ثبت نام
@@ -249,7 +249,7 @@ const MainPage = () => {
         </div>
         {/* dependency */}
         <div className="mt-10">
-          <div className="flex-cen">
+          <div className="flex-cen mb-5">
             <Header text="وابستگی های دوره ها" />
           </div>
           <div className="grid grid-cols-12 gap-4 bg-white p-5 rounded-2xl">
@@ -316,7 +316,7 @@ const MainPage = () => {
               </div>
               <div className="flex-cen mt-5">
                 <Link
-                  to="/"
+                  to="/register"
                   className="bg-blue-600 text-white p-2 rounded-2xl hover:bg-blue-700 transition-all"
                 >
                   ثبت نامتو انجام بده

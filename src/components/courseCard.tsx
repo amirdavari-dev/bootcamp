@@ -58,7 +58,7 @@ const CourseCard = ({
         <div className="mt-2">
           <Link
             className="w-full block text-center font-bold text-blue-600 border-[2px] border-blue-600 rounded-[20px] p-1 group-hover:bg-blue-600 group-hover:text-white transition-all"
-            to="/"
+            to="/register"
           >
             ثبت نام
           </Link>
