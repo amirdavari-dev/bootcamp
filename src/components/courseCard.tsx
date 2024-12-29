@@ -48,7 +48,7 @@ const CourseCard = ({
           </div>
           <div>
             <p className="font-bold p-1 rounded-[20px]">
-              <span>ظرفیت باقی مانده: </span>
+              <span>ظرفیت: </span>
               <span className="text-blue-600">
                 15
               </span>

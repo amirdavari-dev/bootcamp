@@ -33,7 +33,7 @@ const RegisterForm = () => {
       });
       return;
     }
-    const response = axios.post("http://194.5.195.159:3364/bootcamp/register", {
+    const response = axios.post("https://davarijs.ir/api/bootcamp/register", {
       full_name: fullName,
       phone_number: phone_number,
     });
